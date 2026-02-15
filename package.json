@@ -3,7 +3,7 @@
 	"displayName": "FocusMark",
 	"description": "Visual indicators for active VS Code windows when working with multiple instances",
 	"version": "0.1.0",
-	"publisher": "focusmark",
+	"publisher": "anandyz",
 	"license": "MIT",
 	"icon": "assets/icon.png",
 	"repository": {
@@ -21,7 +21,7 @@
 		"vscode": "^1.85.0"
 	},
 	"categories": [
-		"Productivity"
+		"Other"
 	],
 	"keywords": [
 		"theme",
@@ -151,24 +151,24 @@
 				"command": "focusmark.resetColors",
 				"title": "FocusMark: Reset All Color Customizations"
 			}
-			],
-			"menus": {
-				"commandPalette": [
-					{
-						"command": "focusmark.changeTheme",
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "focusmark.changeTheme",
 					"when": "config.focusmark.enabled"
 				},
 				{
 					"command": "focusmark.changeTitleIndicator",
 					"when": "config.focusmark.enabled"
 				},
-					{
-						"command": "focusmark.resetColors",
-						"when": "config.focusmark.enabled"
-					}
-				]
-			}
-		},
+				{
+					"command": "focusmark.resetColors",
+					"when": "config.focusmark.enabled"
+				}
+			]
+		}
+	},
 	"scripts": {
 		"dev": "vite build --mode development --watch",
 		"build": "vite build",
@@ -198,15 +198,15 @@
 		"nanoid": "^5.1.5"
 	},
 	"devDependencies": {
-		"@types/node": "^24.0.1",
 		"@types/fs-extra": "^11.0.4",
+		"@types/node": "^24.0.1",
 		"@types/vscode": "^1.85.0",
 		"@typescript-eslint/eslint-plugin": "^8.34.0",
 		"@typescript-eslint/parser": "^8.34.0",
 		"@vitest/coverage-v8": "^2.1.8",
 		"@vitest/ui": "^2.1.8",
 		"@vscode/test-electron": "^2.4.1",
-		"@vscode/vsce": "^3.5.0",
+		"@vscode/vsce": "^3.7.1",
 		"eslint": "^9.29.0",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.8.3",
