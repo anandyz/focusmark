@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FocusMark — Know Your Active Window</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <header class="nav">
+      <div class="logo">
+        <span class="logo-mark"></span>
+        <span class="logo-text">FocusMark</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#setup">Setup</a>
+      </nav>
+      <button type="button" class="cta ghost" data-cta="install">Install</button>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="hero-left">
+          <div class="chip">Active window clarity, finally.</div>
+          <h1>See the window you’re focused on. Instantly.</h1>
+          <p>
+            FocusMark highlights your active VS Code window and optionally marks the title bar—so
+            when you juggle many projects, you never lose context.
+          </p>
+          <div class="hero-actions">
+            <button type="button" class="cta" data-cta="install">Get FocusMark</button>
+            <button type="button" class="cta outline" data-cta="demo">See it in action</button>
+          </div>
+          <div class="stats">
+            <div>
+              <h3>0</h3>
+              <span>flashy distractions</span>
+            </div>
+            <div>
+              <h3>1</h3>
+              <span>active window, always</span>
+            </div>
+            <div>
+              <h3>3</h3>
+              <span>seconds to set up</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="preview-stack">
+            <div class="preview-card" data-state="active" data-theme="orange" data-minimal="false">
+              <div class="mock-window">
+                <div class="mock-titlebar">
+                  <div class="mock-titlebar-left">
+                    <span class="indicator" data-indicator>●</span>
+                    <span class="title-text">ecommerce-frontend</span>
+                  </div>
+
+                </div>
+                <div class="mock-body">
+                  <div class="mock-activity"></div>
+                  <div class="mock-editor">
+                    <div class="mock-tabs">
+                      <span class="tab active"></span>
+                      <span class="tab"></span>
+                      <span class="tab"></span>
+                    </div>
+                    <div class="mock-lines">
+                      <span></span><span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mock-status">Inactive window</div>
+              </div>
+              <div class="mock-window">
+                <div class="mock-titlebar">
+                  <div class="mock-titlebar-left">
+                    <span class="indicator" data-indicator>●</span>
+                    <span class="title-text">blog-cms</span>
+                  </div>
+
+                </div>
+                <div class="mock-body">
+                  <div class="mock-activity"></div>
+                  <div class="mock-editor">
+                    <div class="mock-tabs">
+                      <span class="tab active"></span>
+                      <span class="tab"></span>
+                      <span class="tab"></span>
+                    </div>
+                    <div class="mock-lines">
+                      <span></span><span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mock-status">FocusMark: Active window</div>
+              </div>
+              <div class="mock-window">
+                <div class="mock-titlebar">
+                  <div class="mock-titlebar-left">
+                    <span class="indicator" data-indicator>●</span>
+                    <span class="title-text">api-backend</span>
+                  </div>
+
+                </div>
+                <div class="mock-body">
+                  <div class="mock-activity"></div>
+                  <div class="mock-editor">
+                    <div class="mock-tabs">
+                      <span class="tab active"></span>
+                      <span class="tab"></span>
+                      <span class="tab"></span>
+                    </div>
+                    <div class="mock-lines">
+                      <span></span><span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mock-status">Inactive window</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="section-title">
+          <p>Why FocusMark</p>
+          <h2>Visual cues that respect your flow</h2>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Active window tint</h3>
+            <p>Apply a clean accent color so the active VS Code window stands out immediately.</p>
+          </article>
+          <article class="card">
+            <h3>Title indicator</h3>
+            <p>Add a subtle symbol to the title bar for instant recognition in OS switchers.</p>
+          </article>
+          <article class="card">
+            <h3>Full color mode</h3>
+            <p>Title-bar-only is the default. Enable full color to tint the entire VS Code chrome.</p>
+          </article>
+          <article class="card">
+            <h3>Custom colors</h3>
+            <p>Pick a custom hex color that fits your workspace vibe.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="how" class="how">
+        <div class="section-title">
+          <p>How it works</p>
+          <h2>Built for multi-window workflows</h2>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span class="step-num">01</span>
+            <div>
+              <h4>Focus a window</h4>
+              <p>FocusMark detects your active VS Code window and applies your chosen theme.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">02</span>
+            <div>
+              <h4>Stay oriented</h4>
+              <p>Inactive windows fall back to default colors, keeping attention on your focus.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">03</span>
+            <div>
+              <h4>Move fast</h4>
+              <p>Switch windows without visual noise or lost context.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="setup" class="setup">
+        <div class="section-title">
+          <p>Get started</p>
+          <h2>Install in minutes</h2>
+        </div>
+        <div class="setup-grid">
+          <div class="card dark">
+            <h3>Commands</h3>
+            <ul>
+              <li>FocusMark: Change Theme</li>
+              <li>FocusMark: Change Title Indicator</li>
+              <li>FocusMark: Reset All Color Customizations</li>
+            </ul>
+          </div>
+          <div class="card dark">
+            <h3>Settings</h3>
+            <ul>
+              <li>`focusmark.theme`</li>
+              <li>`focusmark.fullColorMode`</li>
+              <li>`focusmark.title.indicator`</li>
+              <li>`focusmark.activeApplyDelay`</li>
+            </ul>
+          </div>
+          <div class="card highlight">
+            <h3>Install</h3>
+            <p>Search for “FocusMark” in the VS Code Marketplace.</p>
+            <button type="button" class="cta" data-cta="install">Install FocusMark</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>FocusMark</strong>
+        <span>Know your active window.</span>
+      </div>
+      <div class="footer-links">
+        <span>VS Code Extension</span>
+        <span>Made for multi-window workflows</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

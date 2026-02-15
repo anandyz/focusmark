@@ -1,0 +1,45 @@
+# Build artifacts
+node_modules/
+!dist/
+src/
+.vscode/
+.cursor/
+test-workspace/
+site/
+assets/screenshots/
+
+# Development files
+*.md
+!README.md
+!CHANGELOG.md
+tsconfig.json
+vite.config.ts
+vite.config.mts
+eslint.config.mjs
+pnpm-lock.yaml
+.gitignore
+coverage/
+test-results.html
+.claude/
+focusmark.vsix
+docs/
+
+# Test files
+**/*.test.*
+**/*.spec.*
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp 

@@ -1,0 +1,216 @@
+{
+	"name": "focusmark",
+	"displayName": "FocusMark",
+	"description": "Visual indicators for active VS Code windows when working with multiple instances",
+	"version": "0.1.0",
+	"publisher": "focusmark",
+	"license": "MIT",
+	"icon": "assets/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/anandyz/focusmark.git"
+	},
+	"bugs": {
+		"url": "https://github.com/anandyz/focusmark/issues"
+	},
+	"homepage": "https://github.com/anandyz/focusmark#readme",
+	"extensionKind": [
+		"ui"
+	],
+	"engines": {
+		"vscode": "^1.85.0"
+	},
+	"categories": [
+		"Productivity"
+	],
+	"keywords": [
+		"theme",
+		"window",
+		"productivity",
+		"multi-window",
+		"focus"
+	],
+	"main": "./dist/extension.js",
+	"activationEvents": [
+		"*",
+		"onCommand:focusmark.enable",
+		"onCommand:focusmark.disable",
+		"onCommand:focusmark.changeTheme",
+		"onCommand:focusmark.changeTitleIndicator",
+		"onCommand:focusmark.toggleFromStatusBar",
+		"onCommand:focusmark.resetColors"
+	],
+	"contributes": {
+		"configuration": {
+			"title": "FocusMark",
+			"properties": {
+				"focusmark.enabled": {
+					"type": "boolean",
+					"default": true,
+					"order": 1,
+					"description": "Master switch for FocusMark (colors, title indicator, status bar)"
+				},
+				"focusmark.enableColors": {
+					"type": "boolean",
+					"default": true,
+					"order": 2,
+					"description": "Enable FocusMark color theming. When false, only the title indicator is used."
+				},
+				"focusmark.theme": {
+					"type": "string",
+					"order": 3,
+					"enum": [
+						"auto",
+						"orange",
+						"blue",
+						"green",
+						"purple",
+						"custom"
+					],
+					"default": "auto",
+					"description": "Color theme for active window"
+				},
+				"focusmark.customColor": {
+					"type": "string",
+					"default": "#FF6B35",
+					"order": 4,
+					"description": "Hex color used when theme is set to custom (e.g., #FF6B35)"
+				},
+				"focusmark.title.indicator": {
+					"type": "string",
+					"default": "◉",
+					"order": 5,
+					"description": "The indicator (e.g., an emoji) to show in the window title when active"
+				},
+				"focusmark.keepInactiveWindowColors": {
+					"type": "boolean",
+					"default": false,
+					"order": 8,
+					"description": "Keep your existing VS Code colors when a window becomes inactive (no reset to defaults)"
+				},
+				"focusmark.fullColorMode": {
+					"type": "boolean",
+					"default": false,
+					"order": 6,
+					"description": "Enable full color theming (activity bar, status bar, borders). When false, only the title bar is colored."
+				},
+				"focusmark.activeApplyDelay": {
+					"type": "integer",
+					"default": 100,
+					"order": 7,
+					"minimum": 0,
+					"maximum": 500,
+					"description": "Delay in milliseconds before applying the theme to the newly active window"
+				},
+				"focusmark.logLevel": {
+					"type": "string",
+					"order": 10,
+					"enum": [
+						"error",
+						"warn",
+						"info",
+						"debug"
+					],
+					"default": "info",
+					"description": "Controls how much FocusMark logs to the output panel"
+				},
+				"focusmark.coordinationScope": {
+					"type": "string",
+					"order": 9,
+					"enum": [
+						"global",
+						"workspace"
+					],
+					"default": "global",
+					"description": "Controls whether FocusMark deactivates other windows globally or only within the same workspace"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "focusmark.enable",
+				"title": "Enable FocusMark"
+			},
+			{
+				"command": "focusmark.disable",
+				"title": "Disable FocusMark"
+			},
+			{
+				"command": "focusmark.changeTheme",
+				"title": "FocusMark: Change Theme"
+			},
+			{
+				"command": "focusmark.changeTitleIndicator",
+				"title": "FocusMark: Change Title Indicator"
+			},
+			{
+				"command": "focusmark.toggleFromStatusBar",
+				"title": "Toggle FocusMark from Status Bar"
+			},
+			{
+				"command": "focusmark.resetColors",
+				"title": "FocusMark: Reset All Color Customizations"
+			}
+			],
+			"menus": {
+				"commandPalette": [
+					{
+						"command": "focusmark.changeTheme",
+					"when": "config.focusmark.enabled"
+				},
+				{
+					"command": "focusmark.changeTitleIndicator",
+					"when": "config.focusmark.enabled"
+				},
+					{
+						"command": "focusmark.resetColors",
+						"when": "config.focusmark.enabled"
+					}
+				]
+			}
+		},
+	"scripts": {
+		"dev": "vite build --mode development --watch",
+		"build": "vite build",
+		"build:prod": "vite build --mode production",
+		"compile": "tsc --noEmit",
+		"watch": "tsc --noEmit --watch",
+		"pretest": "pnpm run compile && pnpm run lint",
+		"test": "vitest",
+		"test:coverage": "vitest --coverage",
+		"test:ui": "vitest --ui",
+		"lint": "eslint src --ext ts",
+		"lint:fix": "eslint src --ext ts --fix",
+		"type-check": "tsc --noEmit",
+		"vscode:prepublish": "pnpm run build:prod",
+		"package": "vsce package --no-dependencies --allow-missing-repository --allow-star-activation --allow-package-all-secrets --allow-package-env-file -o focusmark.vsix",
+		"package:install": "pnpm run package && code --install-extension focusmark.vsix --force",
+		"package:test": "pnpm run package:install && echo '✅ Extension installed! Test with multiple VS Code windows.'",
+		"version:patch": "npm version patch --no-git-tag-version",
+		"version:minor": "npm version minor --no-git-tag-version",
+		"version:major": "npm version major --no-git-tag-version",
+		"publish": "vsce publish --no-dependencies --allow-missing-repository --allow-star-activation --allow-package-all-secrets --allow-package-env-file",
+		"clean": "rimraf dist out node_modules/.vite *.vsix"
+	},
+	"dependencies": {
+		"colord": "^2.9.3",
+		"fs-extra": "^11.3.0",
+		"nanoid": "^5.1.5"
+	},
+	"devDependencies": {
+		"@types/node": "^24.0.1",
+		"@types/fs-extra": "^11.0.4",
+		"@types/vscode": "^1.85.0",
+		"@typescript-eslint/eslint-plugin": "^8.34.0",
+		"@typescript-eslint/parser": "^8.34.0",
+		"@vitest/coverage-v8": "^2.1.8",
+		"@vitest/ui": "^2.1.8",
+		"@vscode/test-electron": "^2.4.1",
+		"@vscode/vsce": "^3.5.0",
+		"eslint": "^9.29.0",
+		"rimraf": "^6.0.1",
+		"typescript": "^5.8.3",
+		"vite": "^6.0.7",
+		"vitest": "^3.2.3"
+	}
+}

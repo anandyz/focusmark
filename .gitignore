@@ -1,0 +1,14 @@
+/node_modules
+/dist
+/out
+/coverage
+/.vscode
+/logs
+/tmp
+/temp
+/test-results
+/test-results.xml
+/test-results.json
+/test-results.html
+/docs
+*.vsix
